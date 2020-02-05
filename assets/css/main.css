@@ -3602,9 +3602,9 @@ input, select, textarea {
 				position: relative;
 			}
 
-				#sidebar nav > ul > li:first-child {
+				/* #sidebar nav > ul > li:first-child {
 					margin: 0;
-				}
+				} */
 
 				#sidebar nav > ul > li:nth-child(1) {
 					-moz-transition-delay: 0.45s;
@@ -3757,7 +3757,7 @@ input, select, textarea {
 			font-size: 0.6em;
 			font-weight: bold;
 			letter-spacing: 0.25em;
-			line-height: 1.25;
+			line-height: 1;
 			outline: 0;
 			padding: 1.35em 0;
 			position: relative;
@@ -3854,15 +3854,15 @@ input, select, textarea {
 						height: inherit;
 						line-height: inherit;
 						margin: 0;
-						margin-left: 3%;
-						margin-right: -1%;
+						/* margin-left: 3%;
+						margin-right: -1%; */
 					}
 
 						#sidebar nav ul li {
 							display: block;
 							height: inherit;
 							line-height: inherit;
-							margin: 0 0 0 2em;
+							margin: 0 2% 0 2%;
 							padding: 0;
 						}
 
