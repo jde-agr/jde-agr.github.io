@@ -52,27 +52,54 @@
 			$sidebar_a
 				.addClass('scrolly')
 				.on('click', function() {
+				// .on('click', function($in) {
 
 					var $this = $(this);
+					// console.log("Clicked", $in.currentTarget.classList)
+					// if ($in.currentTarget.classList.length == 2) {
+					// 	console.log("YEA")
+					// 	$this.addClass('active');
+					// }
 
 					// External link? Bail.
 						if ($this.attr('href').charAt(0) != '#')
 							return;
 
 					// Deactivate all links.
-						$sidebar_a.removeClass('active');
+					$sidebar_a.removeClass('active');
 
 					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
+						// console.log("inve" + JSON.stringify($this));
+						// var $filteringActive2 = JSON.parse(JSON.stringify($sidebar_a.filter('.active-locked')));
+						// if (!$filteringActive2[0]) {
+							// console.log("vert" + JSON.stringify($sidebar_a));
+							// if ($sidebar_a.filter('.active-locked').length == 0) {
+							// 	$sidebar_a.length = 0;
+							// 	$sidebar_a.prevObject = null;
+							// }
+							// if ($in.currentTarget.classList.length == 2) {
+							// 	console.log("YEA")
+								// $this.addClass('active');
+								// $sidebar_a
+							// 		.removeClass('active')
+							// 		.removeClass('active-locked');
+							// }
+							$this
+								.addClass('active')
+								.addClass('active-locked');
+							// }
+							// if ($filteringActive2[0])
+							// $this.addClass('active');
+
 
 				})
 				.each(function() {
+				// .each(function($indx) {
 
 					var	$this = $(this),
 						id = $this.attr('href'),
 						$section = $(id);
+						// $indx2 = $indx
 
 					// No section for this link? Bail.
 						if ($section.length < 1)
@@ -93,12 +120,40 @@
 
 								// Activate section.
 									$section.removeClass('inactive');
+									// console.log("nepo" + JSON.stringify($this) + JSON.stringify($indx));
+									// if (!$in2) {
+									// 	console.log("NEED")
+									// 	$el2 = "active";
+									// }
+									// var $filteringActive = JSON.parse(JSON.stringify($sidebar_a.filter('.active-locked')));
+									// console.log("Jello" + JSON.stringify($filteringActive));
+									// console.log("Myyyy" + JSON.stringify($sidebar_a, null, 4));
 
 								// No locked links? Deactivate all links and activate this section's one.
+									// console.log("reade", JSON.stringify($filteringActive[0]))
+									// $sidebar_a.removeClass('active');
+									// $this.addClass('active');
+									// if ($filteringActive[0]) {
+									// 	if ($sidebar_a.filter('.active-locked').length == 0) {
+									// 		$sidebar_a.length = 0;
+									// 		$sidebar_a.prevObject = null;
+									// 		$this.addClass('active');
+									// 	}
+									// 	$this.addClass('active-locked');
+									// }
+									// if (!$in2) {
+									// 	console.log("NEED")
+									// 	$sidebar_a.addClass('active');
+									// }
+									
 									if ($sidebar_a.filter('.active-locked').length == 0) {
 
 										$sidebar_a.removeClass('active');
 										$this.addClass('active');
+										// console.log("reade", JSON.stringify($filteringActive[0]));
+										// if ($filteringActive[0]) {
+										// 	$sidebar_a.length = 0;
+										// }
 
 									}
 
@@ -157,6 +212,8 @@
 
 				// Assign image.
 					$image.css('background-image', 'url(' + $img.attr('src') + ')');
+					$image.css('background-size', 'contain');
+					$image.css('background-repeat', 'no-repeat');
 
 				// Set background position.
 					if (x = $img.data('position'))
